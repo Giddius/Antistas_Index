@@ -1,0 +1,10 @@
+graft src
+prune src/dev_ressources
+prune src/ressources
+prune src/init_userdata/data_pack
+prune src/logs
+exclude .env*
+exclude .isort.cfg
+exclude .pydeps
+exclude cleaner.ini
+exclude config_template.ini
