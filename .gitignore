@@ -599,6 +599,6 @@ icons/
 shebang.txt
 .env
 quick_private_scripts/
-
+*.errors
 
 # Project Specific ignores
