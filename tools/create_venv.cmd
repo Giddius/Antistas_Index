@@ -201,6 +201,9 @@ echo.
 Echo ################# Installing pyqt5-tools==5.15.1.1.7.5
 call pip install --pre pyqt5-tools==5.15.1.1.7.5
 echo.
+Echo ################# Installing PyQt5-stubs
+call pip install --force-reinstall --no-cache-dir flit
+echo.
 rem Echo ################# Installing PyQt5-stubs
 rem call pip install PyQt5-stubs
 rem echo.
