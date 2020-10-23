@@ -21,13 +21,15 @@
 # ``invoke generate.installer``.
 
 # * Standard Library Imports -->
-import setuptools
 import sys
 import shutil
 import struct
 import os.path
 import pkgutil
 import tempfile
+
+# * Third Party Imports -->
+import setuptools
 
 # Useful for very coarse version differentiation.
 PY2 = sys.version_info[0] == 2

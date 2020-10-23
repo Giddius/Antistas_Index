@@ -1,18 +1,103 @@
 # region [Imports]
-import gidlogger as glog
-import configparser
-from gidtools.gidfiles import pathmaker, writejson, loadjson, readit, writeit, writebin, readbin, appendwriteit, linereadit, QuickFile, clearit
+# * Standard Library Imports -->
 import os
-from pprint import pprint, pformat
-from src.data.standard_config_data import PROTOTYPE_CONFIG
+import configparser
+
+# * Gid Imports -->
+import src.utility.gidlogger_vend.logger_functions as glog
+from src.utility.misc_functions import pathmaker
+
 # endregion[Imports]
 
 # region [Logging]
 log = glog.aux_logger(__name__)
-log.info(glog.imported(__name__))
+
 # endregion[Logging]
 
 THIS_FILE_DIR = os.path.abspath(os.path.dirname(__file__))
+PROTOTYPE_CONFIG = r"""#*********************************
+[general]
+#*********************************
+base_directory = cfg_dir
+output_location = ${base_directory}/index_output
+output_file_name = file_index
+path_output_seperator = /
+windows_problematic_name_regex = '[\\/:"*?<>|]+'
+size_unit_files = kilobyte
+size_unit_combined_size = megabyte
+hash_algorithm = md5
+printer_function_prefix = printer
+update_time_interval = 1 day
+update_after_push = yes
+standard_attribute_function_prefix = std
+meta_attribute_function_prefix = meta
+
+#*********************************
+[general_settings]
+#*********************************
+logging_level = debug
+use_logging = True
+
+#*********************************
+[fixed_lists]
+#*********************************
+output_formats_to_use = json, csv, txt, excel
+external = JeroenArsenal, UPSMON
+exclude_folders = .git, __pycache__, sqfvalidator
+exclude_files = file_index.json,
+extra_std_attributes_list =
+extra_meta_attributes_list =
+
+
+#*********************************
+[basic_attributes]
+#*********************************
+use_name = yes
+use_extension = yes
+use_basic_file_name = yes
+use_relative_full_path = yes
+use_relative_folder_path = yes
+use_file_size_string = yes
+use_file_size_bytes = yes
+use_creation_time = yes
+use_most_recent_modification_time = yes
+use_space_in_filename = yes
+use_problematic_filename_windows = yes
+use_belongs_to = yes
+use_file_hash = yes
+
+
+#*********************************
+[basic_meta_attributes]
+#*********************************
+use_number_of_files_by_extension = yes
+use_index_creation_time = yes
+use_number_of_files = yes
+use_combined_size_str = yes
+use_combined_size_bytes = yes
+use_overall_hash = yes
+
+##############################################################################################################################################################################
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##############################################################################################################################################################################
+
+#*********************************
+[std_attribute_identifier_example]
+#*********************************
+attribute_name = example_name
+file_name = example_file.py
+function = std_get_example
+
+
+#*********************************
+[meta_attribute_identifier_example]
+#*********************************
+attribute_name = example_name
+file_name = example_file.py
+function = meta_get_example
+
+
+"""
 
 
 def provide_prototype_config(in_path):
@@ -35,8 +120,4 @@ def load_cfg_file_to_dict(filename):
 
 
 if __name__ == '__main__':
-    clearit(r"D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\Antistas_Index\src\data\standard_config_data.py")
-    FILE = 'exp.ini'
-    x = load_cfg_file_to_dict(FILE)
-    for key in x:
-        appendwriteit(r"D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\Antistas_Index\src\data\standard_config_data.py", f"{key} = {pformat(x.get(key))}\n\n")
+    pass

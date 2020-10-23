@@ -1,21 +1,21 @@
 # region [Imports]
 
+# * Standard Library Imports -->
 import os
-import sys
-from gidtools.gidfiles import pathmaker, writejson, loadjson
-import datetime
 import re
-import statistics
 import hashlib
-from timeit import Timer
-import configparser
-from configparser import ExtendedInterpolation
-from checksumdir import dirhash
-import gidlogger as glog
-from src.engine.config_reader import CfgSingletonProvider
+import datetime
 from functools import lru_cache
 from collections import namedtuple
-from src.utility.misc_data import SGF, SIZE_CONV
+
+# * Gid Imports -->
+import src.utility.gidlogger_vend.logger_functions as glog
+from src.utility.misc_functions import pathmaker
+
+# * Local Imports -->
+from src.utility.misc_data import SIZE_CONV
+from src.engine.config_reader import CfgSingletonProvider
+
 # endregion[Imports]
 
 # region [Configs]
@@ -29,7 +29,7 @@ ASFile = namedtuple('ASFile', ['name', 'directory', 'full_path'])
 # region [Logging]
 
 log = glog.aux_logger(__name__)
-log.info(glog.imported(__name__))
+
 
 # endregion[Logging]
 
@@ -133,12 +133,14 @@ def std_get_file_size_string(in_file: ASFile):
 
 def find_filter_files():
     _start_dir = get_start_dir()
+    log.info('starting file search in %s', _start_dir)
     _exclude_folder = CFG.getlist('fixed_lists', 'exclude_folders')
     _exclude_files = CFG.getlist('fixed_lists', 'exclude_files')
     for dirname, folderlist, filelist in os.walk(_start_dir):
         if all(_ex_folder not in pathmaker(dirname).split('/') for _ex_folder in _exclude_folder):
             for _file in filelist:
                 if _file not in _exclude_files and _file.casefold() != os.path.basename(os.getenv('AS_INDEX_CFG_FILE')).casefold() and _file not in _exclude_output_files():
+                    log.info('examining file "%s"', _file)
                     yield ASFile(_file, pathmaker(dirname), pathmaker(dirname, _file))
 
 

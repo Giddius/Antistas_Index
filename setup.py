@@ -1,6 +1,8 @@
-from setuptools import setup, find_packages
+# * Standard Library Imports -->
 import os
 
+# * Third Party Imports -->
+from setuptools import setup, find_packages
 
 # region[Constants]
 ANTISTASINDEX_AUTHOR = ['Giddius']
@@ -8,7 +10,8 @@ ANTISTASINDEX_SHORT_DESCRIPTION = 'WiP'
 ANTISTASINDEX_LONG_DESCRIPTION_FILE = 'README.md'
 ANTISTASINDEX_VERSION = "0.1.0"
 ANTISTASINDEX_LICENSE = 'MIT'
-ANTISTASINDEX_ENTRY_POINTS = {}
+ANTISTASINDEX_ENTRY_POINTS = {'console_scripts': ['antistasidex_getconfig = src.cli:create_configuration',
+                                                  'antistasidex = src.cli:index_files']}
 ANTISTASINDEX_URL = ''
 ANTISTASINDEX_REQUIREMENTS_FILE = 'requirements.txt'
 # endregion[Constants]

@@ -1,31 +1,10 @@
-########################################################## created at --> 2020-10-23_01-59-18 ##########################################################
-appdirs==1.4.4
-argcomplete==1.12.1
-attrs==20.2.0
-certifi==2020.6.20
-chardet==3.0.4
+########################################################## created at --> 2020-10-23_06-28-30 ##########################################################
 checksumdir==1.2.0
 click==7.1.2
-Deprecated==1.2.10
 et-xmlfile==1.0.1
-fuzzysearch==0.7.3
 fuzzywuzzy==0.18.0
-idna==2.10
 jdcal==1.4.1
-Jinja2==2.11.2
-MarkupSafe==1.1.1
 openpyxl==3.0.5
-packaging==20.4
-pipx==0.15.5.1
-PyGithub==1.53
-PyJWT==1.7.1
-pyparsing==2.4.7
 python-dotenv==0.14.0
 python-Levenshtein==0.12.0
 pywin32==228
-requests==2.24.0
-six==1.15.0
-urllib3==1.25.11
-userpath==1.4.1
-WMI==1.5.1
-wrapt==1.12.1

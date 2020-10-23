@@ -1,7 +1,9 @@
+# * Standard Library Imports -->
 import os
 import shutil
-from gidtools.gidfiles import pathmaker
 
+# * Gid Imports -->
+from gidtools.gidfiles import pathmaker
 
 PROJECT_NAME = "Antistasi_Index"
 

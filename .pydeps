@@ -1,5 +1,5 @@
 [pydeps]
-max_bacon = 4
+max_bacon = 6
 cluster=True
 max_cluster_size=10
 min_cluster_size=2

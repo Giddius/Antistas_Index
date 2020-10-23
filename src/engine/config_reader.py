@@ -2,20 +2,13 @@
 
 # region [Imports]
 
+# * Standard Library Imports -->
 import os
-import sys
-from gidtools.gidfiles import pathmaker, writejson, loadjson
-
-import datetime
-import re
-import statistics
-import hashlib
-from timeit import Timer
-import configparser
 from configparser import ExtendedInterpolation
-from checksumdir import dirhash
-from gidtools.gidconfig import ConfigHandler, Get
-import gidlogger as glog
+
+# * Gid Imports -->
+import src.utility.gidlogger_vend.logger_functions as glog
+from src.utility.misc_functions import pathmaker, ConfigHandler
 
 # endregion[Imports]
 
@@ -23,12 +16,10 @@ import gidlogger as glog
 # region [Logging]
 
 log = glog.aux_logger(__name__)
-log.info(glog.imported(__name__))
+
 
 # endregion[Logging]
 
-if len(sys.argv) > 1:
-    os.environ["AS_INDEX_CFG_FILE"] = sys.argv[1].replace('\\\\', '/').replace('\\', '/')
 THIS_FILE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -37,17 +28,20 @@ class CfgSingletonProvider:
 
     @classmethod
     def get_config(cls):
-        if cls.cfg_object is None:
-            try:
-                _cfg = ConfigHandler(config_file=pathmaker(os.getenv('AS_INDEX_CFG_FILE')), interpolation=ExtendedInterpolation())
-            except Exception as error:
-                log.error("Error while trying to create configreader from provided stdin filepath, error: %s", error)
-                log.error('Trying again with standard config')
-                _old_cwd = os.getcwd()
-                os.chdir(THIS_FILE_DIR)
-                _cfg = ConfigHandler(config_file=pathmaker(r"..\src\data\exp.ini"), interpolation=ExtendedInterpolation())
-                os.chdir(_old_cwd)
-            cls.cfg_object = _cfg
+        if os.getenv('AS_INDEX_CFG_FILE') is not None:
+            if cls.cfg_object is None:
+                try:
+                    _cfg = ConfigHandler(config_file=pathmaker(os.getenv('AS_INDEX_CFG_FILE')), interpolation=ExtendedInterpolation())
+                except Exception as error:
+                    log.error("Error while trying to create configreader from provided stdin filepath, error: %s", error)
+                    log.error('Trying again with standard config')
+                    _old_cwd = os.getcwd()
+                    os.chdir(THIS_FILE_DIR)
+                    _cfg = ConfigHandler(config_file=pathmaker(r"..\src\data\exp.ini"), interpolation=ExtendedInterpolation())
+                    os.chdir(_old_cwd)
+                cls.cfg_object = _cfg
+        else:
+            raise EnvironmentError('config path is not set')
 
         return cls.cfg_object
 

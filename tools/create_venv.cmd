@@ -100,12 +100,12 @@ rem call pip install QScintilla
 rem echo.
 
 
-echo.
-Echo +++++++++++++++++++++++++++++ Packages From Github +++++++++++++++++++++++++++++
-echo.
-Echo ################# Installing git+https://github.com/overfl0/Armaclass.git
-call pip install git+https://github.com/overfl0/Armaclass.git
-echo.
+rem echo.
+rem Echo +++++++++++++++++++++++++++++ Packages From Github +++++++++++++++++++++++++++++
+rem echo.
+rem Echo ################# Installing git+https://github.com/overfl0/Armaclass.git
+rem call pip install git+https://github.com/overfl0/Armaclass.git
+rem echo.
 
 
 echo.
@@ -117,18 +117,18 @@ echo.
 rem Echo ################# Installing pyperclip
 rem call pip install pyperclip
 rem echo.
-Echo ################# Installing jinja2
-call pip install jinja2
-echo.
+rem Echo ################# Installing jinja2
+rem call pip install jinja2
+rem echo.
 rem Echo ################# Installing bs4
 rem call pip install bs4
 rem echo.
-Echo ################# Installing requests
-call pip install requests
-echo.
-Echo ################# Installing PyGithub
-call pip install PyGithub
-echo.
+rem Echo ################# Installing requests
+rem call pip install requests
+rem echo.
+rem Echo ################# Installing PyGithub
+rem call pip install PyGithub
+rem echo.
 Echo ################# Installing fuzzywuzzy
 call pip install fuzzywuzzy
 echo.
@@ -144,21 +144,23 @@ rem echo.
 Echo ################# Installing openpyxl
 call pip install openpyxl
 echo.
+Echo ################# Installing click
+call pip install click
+echo.
 
 
-
-echo.
-Echo +++++++++++++++++++++++++++++ Gid Packages +++++++++++++++++++++++++++++
-echo.
-Echo ################# Installing D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidtools_utils
-call pip install -e D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidtools_utils
-echo.
+rem echo.
+rem Echo +++++++++++++++++++++++++++++ Gid Packages +++++++++++++++++++++++++++++
+rem echo.
+rem Echo ################# Installing D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidtools_utils
+rem call pip install -e D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidtools_utils
+rem echo.
 rem Echo ################# Installing D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidqtutils
 rem call pip install -e D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidqtutils
 rem echo.
-Echo ################# Installing D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidlogger_rep
-call pip install -e D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidlogger_rep
-echo.
+rem Echo ################# Installing D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidlogger_rep
+rem call pip install -e D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\gidlogger_rep
+rem echo.
 rem Echo ################# Installing D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\Gid_Vscode_Wrapper
 rem call pip install -e D:\Dropbox\hobby\Modding\Programs\Github\My_Repos\Gid_Vscode_Wrapper
 rem echo.
@@ -192,16 +194,16 @@ echo.
 Echo ################# Installing wheel
 call pip install --no-cache-dir wheel
 echo.
-Echo ################# Installing https://github.com/pyinstaller/pyinstaller/tarball/develop
-call pip install --force-reinstall --no-cache-dir https://github.com/pyinstaller/pyinstaller/tarball/develop
-echo.
+rem Echo ################# Installing https://github.com/pyinstaller/pyinstaller/tarball/develop
+rem call pip install --force-reinstall --no-cache-dir https://github.com/pyinstaller/pyinstaller/tarball/develop
+rem echo.
 Echo ################# Installing pep517
 call pip install  --no-cache-dir pep517
 echo.
-Echo ################# Installing pyqt5-tools==5.15.1.1.7.5
-call pip install --pre pyqt5-tools==5.15.1.1.7.5
-echo.
-Echo ################# Installing PyQt5-stubs
+rem Echo ################# Installing pyqt5-tools==5.15.1.1.7.5
+rem call pip install --pre pyqt5-tools==5.15.1.1.7.5
+rem echo.
+Echo ################# Installing flit
 call pip install --force-reinstall --no-cache-dir flit
 echo.
 rem Echo ################# Installing PyQt5-stubs

@@ -1,22 +1,21 @@
 # region [Imports]
 
+# * Standard Library Imports -->
 import os
-import sys
-from gidtools.gidfiles import pathmaker, writejson, loadjson, writeit, pickleit
-import datetime
-import re
-import statistics
-import hashlib
-from timeit import Timer
-import configparser
-from configparser import ExtendedInterpolation
-from checksumdir import dirhash
-import gidlogger as glog
-from src.engine.config_reader import CfgSingletonProvider
-from pprint import pformat
 import csv
-from openpyxl import Workbook
 from copy import deepcopy
+from pprint import pformat
+
+# * Third Party Imports -->
+from openpyxl import Workbook
+
+# * Gid Imports -->
+import src.utility.gidlogger_vend.logger_functions as glog
+from src.utility.misc_functions import writeit, pickleit, pathmaker, writejson
+
+# * Local Imports -->
+from src.engine.config_reader import CfgSingletonProvider
+
 # endregion[Imports]
 
 # region [Configs]
@@ -28,7 +27,7 @@ CFG = CfgSingletonProvider.get_config()
 # region [Logging]
 
 log = glog.aux_logger(__name__)
-log.info(glog.imported(__name__))
+
 
 # endregion[Logging]
 
@@ -56,16 +55,19 @@ def convert_extension_frequency_dict(extension_frequency_dict: dict, out_type: s
 
 
 def printer_json_file(in_dict: dict):
+    log.info('writing to json file')
     _output_file = output_location('json')
     writejson(in_dict, _output_file)
 
 
 def printer_txt_file(in_dict: dict):
+    log.info('writing to txt file')
     _output_file = output_location('txt')
     writeit(_output_file, pformat(in_dict))
 
 
 def printer_csv_file(in_dict: dict):
+    log.info('writing to csv files')
     in_dict = deepcopy(in_dict)
     _output_file_meta = output_location('csv', suffix='meta')
     _output_file_data = output_location('csv', suffix='data')
@@ -83,11 +85,13 @@ def printer_csv_file(in_dict: dict):
 
 
 def printer_pkl_file(in_dict: dict):
+    log.info('writing to pkl file')
     _output_file = output_location('pkl')
     pickleit(in_dict, _output_file)
 
 
 def printer_excel_file(in_dict: dict):
+    log.info('writing to excel file')
     in_dict = deepcopy(in_dict)
     _output_file = output_location('xlsx')
     if 'amount_of_files_per_extension' in in_dict.get('meta'):
