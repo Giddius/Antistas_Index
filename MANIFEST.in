@@ -8,3 +8,5 @@ exclude .isort.cfg
 exclude .pydeps
 exclude cleaner.ini
 exclude config_template.ini
+exclude .pypirc
+exclude pyproject.toml

@@ -3,12 +3,12 @@
 from collections import namedtuple
 
 # * Gid Imports -->
-import src.utility.gidlogger_vend.logger_functions as glog
+import antistasindex.utility.gidlogger_vend.logger_functions as glog
 
 # * Local Imports -->
-from src.engine.config_reader import CfgSingletonProvider, get_enabled
-from src.data.standard_config_data import PRINTER_CALLBOOK, BASE_STD_CALLBOOK, BASE_META_CALLBOOK
-from src.engine.general_data_index import find_filter_files
+from antistasindex.engine.config_reader import CfgSingletonProvider, get_enabled
+from antistasindex.data.standard_config_data import PRINTER_CALLBOOK, BASE_STD_CALLBOOK, BASE_META_CALLBOOK
+from antistasindex.engine.general_data_index import find_filter_files
 
 # endregion[Imports]
 

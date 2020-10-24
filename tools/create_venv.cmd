@@ -65,9 +65,9 @@ echo.
 Echo ################# Installing Setuptools
 call pip install setuptools
 echo.
-Echo ################# Installing pywin32
-call pip install pywin32
-echo.
+rem Echo ################# Installing pywin32
+rem call pip install pywin32
+rem echo.
 Echo ################# Installing python-dotenv
 call pip install python-dotenv
 echo.
@@ -103,9 +103,9 @@ rem echo.
 rem echo.
 rem Echo +++++++++++++++++++++++++++++ Packages From Github +++++++++++++++++++++++++++++
 rem echo.
-rem Echo ################# Installing git+https://github.com/overfl0/Armaclass.git
-rem call pip install git+https://github.com/overfl0/Armaclass.git
-rem echo.
+Echo ################# Installing git+https://github.com/overfl0/Armaclass.git
+call pip install git+https://github.com/overfl0/Armaclass.git
+echo.
 
 
 echo.
@@ -117,9 +117,9 @@ echo.
 rem Echo ################# Installing pyperclip
 rem call pip install pyperclip
 rem echo.
-rem Echo ################# Installing jinja2
-rem call pip install jinja2
-rem echo.
+Echo ################# Installing jinja2
+call pip install jinja2
+echo.
 rem Echo ################# Installing bs4
 rem call pip install bs4
 rem echo.

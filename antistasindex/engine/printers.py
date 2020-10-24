@@ -10,11 +10,11 @@ from pprint import pformat
 from openpyxl import Workbook
 
 # * Gid Imports -->
-import src.utility.gidlogger_vend.logger_functions as glog
-from src.utility.misc_functions import writeit, pickleit, pathmaker, writejson
+import antistasindex.utility.gidlogger_vend.logger_functions as glog
+from antistasindex.utility.misc_functions import writeit, pickleit, pathmaker, writejson
 
 # * Local Imports -->
-from src.engine.config_reader import CfgSingletonProvider
+from antistasindex.engine.config_reader import CfgSingletonProvider
 
 # endregion[Imports]
 

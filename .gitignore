@@ -600,5 +600,6 @@ shebang.txt
 .env
 quick_private_scripts/
 create_venv_logs/
+.pypirc
 
 # Project Specific ignores

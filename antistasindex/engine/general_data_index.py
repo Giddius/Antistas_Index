@@ -9,12 +9,12 @@ from functools import lru_cache
 from collections import namedtuple
 
 # * Gid Imports -->
-import src.utility.gidlogger_vend.logger_functions as glog
-from src.utility.misc_functions import pathmaker
+import antistasindex.utility.gidlogger_vend.logger_functions as glog
+from antistasindex.utility.misc_functions import pathmaker
 
 # * Local Imports -->
-from src.utility.misc_data import SIZE_CONV
-from src.engine.config_reader import CfgSingletonProvider
+from antistasindex.utility.misc_data import SIZE_CONV
+from antistasindex.engine.config_reader import CfgSingletonProvider
 
 # endregion[Imports]
 

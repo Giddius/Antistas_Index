@@ -7,8 +7,8 @@ import os
 from configparser import ExtendedInterpolation
 
 # * Gid Imports -->
-import src.utility.gidlogger_vend.logger_functions as glog
-from src.utility.misc_functions import pathmaker, ConfigHandler
+import antistasindex.utility.gidlogger_vend.logger_functions as glog
+from antistasindex.utility.misc_functions import pathmaker, ConfigHandler
 
 # endregion[Imports]
 

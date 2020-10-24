@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 # * Gid Imports -->
-import src.utility.gidlogger_vend.logger_functions as glog
+import antistasindex.utility.gidlogger_vend.logger_functions as glog
 from typing import Union
 
 # region [Logging]
