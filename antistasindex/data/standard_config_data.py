@@ -5,13 +5,13 @@
 from collections import namedtuple
 
 # * Local Imports -->
-from src.engine.printers import printer_csv_file, printer_pkl_file, printer_txt_file, printer_json_file, printer_excel_file
-from src.engine.meta_data_index import (meta_get_overall_hash, meta_get_number_of_files, meta_get_combined_size_bytes,
-                                        meta_get_index_creation_time, meta_get_combined_size_string, meta_get_number_of_files_by_extension)
-from src.engine.general_data_index import (std_get_filename, std_get_extension, std_get_file_hash, std_get_belongs_to, std_get_creation_time,
-                                           std_get_basic_file_name, std_get_file_size_bytes, std_get_file_size_string,
-                                           std_get_modification_time, std_get_space_in_filename, std_get_relative_full_path,
-                                           std_get_relative_folder_path, std_get_problematic_name_windows)
+from antistasindex.engine.printers import printer_csv_file, printer_pkl_file, printer_txt_file, printer_json_file, printer_excel_file
+from antistasindex.engine.meta_data_index import (meta_get_overall_hash, meta_get_number_of_files, meta_get_combined_size_bytes,
+                                                  meta_get_index_creation_time, meta_get_combined_size_string, meta_get_number_of_files_by_extension)
+from antistasindex.engine.general_data_index import (std_get_filename, std_get_extension, std_get_file_hash, std_get_belongs_to, std_get_creation_time,
+                                                     std_get_basic_file_name, std_get_file_size_bytes, std_get_file_size_string,
+                                                     std_get_modification_time, std_get_space_in_filename, std_get_relative_full_path,
+                                                     std_get_relative_folder_path, std_get_problematic_name_windows)
 
 # endregion[Imports]
 

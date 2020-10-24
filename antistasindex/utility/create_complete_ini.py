@@ -4,8 +4,8 @@ import os
 import configparser
 
 # * Gid Imports -->
-import src.utility.gidlogger_vend.logger_functions as glog
-from src.utility.misc_functions import pathmaker
+import antistasindex.utility.gidlogger_vend.logger_functions as glog
+from antistasindex.utility.misc_functions import pathmaker
 
 # endregion[Imports]
 

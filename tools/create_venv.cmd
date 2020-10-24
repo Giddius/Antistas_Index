@@ -251,8 +251,9 @@ Echo ################# converting ..\requirements_dev.txt to ..\requirements.txt
 call %OLDHOME_FOLDER%convert_requirements_dev_to_normal.py
 echo.
 Echo INSTALL THE PACKAGE ITSELF AS -dev PACKAGE SO I DONT HAVE TO DEAL WITH RELATIVE PATHS
+cd ..\
 rem call pip install -e ..
-call pip install --no-cache-dir -e ..
+call flit install -s
 echo.
 echo.
 echo ###############################################################################################################
